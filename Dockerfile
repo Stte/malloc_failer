@@ -1,3 +1,3 @@
-FROM debian:buster-slim
-RUN apt-get update && apt-get -y upgrade && apt-get install -y git build-essential && mkdir -m 666 /project
+FROM alpine:latest
+RUN apk add build-base valgrind && mkdir -m 666 /project
 WORKDIR /project
