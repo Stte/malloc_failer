@@ -1,12 +1,31 @@
 # malloc_failer
-Fails mallocs one by one.
+To make testing mallocs fails a tiny bit easier. 
+Malloc_failer fails mallocs one by one to help checking that malloc's are properly protected.
+
+
+---
 
 test_malloc expects function pointer that can be called without parameters.
 
-**Works only on linux.**
+Example:
+```c
+void	test_calloc()
+{
+	ft_calloc(1, 1);
+}
 
-How to use on mac:
-Run the dockerfile to make a image:
+int	main(void)
+{
+	test_mallocs(test_calloc);
+	return (0);
+}
+```
+
+---
+
+To use on Mac you have to use Docker:
+
+Build the Dockerfile:
 ```sh
 docker build -t malloc-test .
 ```
@@ -14,11 +33,17 @@ Start a container:
 ```sh
 docker run -dti --name malloc_tester -v $(pwd):/project/ malloc-test
 ```
-Now you can for example run your make file running:
+Now you can, for example, run your Makefile in the docker container by running:
 ```sh
 docker exec -ti malloc_tester make
 ```
 
-There is working demo in the demo folder.
-You can run the demo by running the test.sh
+There is a working demo in the demo folder.
+You can run the demo by running the test.sh 
 
+---
+
+On linux you can just build your code with wrap and it should work.
+```sh
+gcc -Wl,-wrap,malloc
+```
