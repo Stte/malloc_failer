@@ -2,6 +2,9 @@
 To make testing mallocs fails a tiny bit easier. 
 Malloc_failer fails mallocs one by one to help checking that malloc's are properly protected.
 
+
+---
+
 test_malloc expects function pointer that can be called without parameters.
 
 Example:
@@ -18,9 +21,9 @@ int	main(void)
 }
 ```
 
-**Works only on linux. Building needs -wrap flag.**
+---
 
-To use on mac you have to use Docker:
+To use on Mac you have to use Docker:
 
 Build the Dockerfile:
 ```sh
@@ -30,11 +33,17 @@ Start a container:
 ```sh
 docker run -dti --name malloc_tester -v $(pwd):/project/ malloc-test
 ```
-Now you can, for example, run your make file in the docker container by running:
+Now you can, for example, run your Makefile in the docker container by running:
 ```sh
 docker exec -ti malloc_tester make
 ```
 
 There is a working demo in the demo folder.
-You can run the demo by running the test.sh
+You can run the demo by running the test.sh 
 
+---
+
+On linux you can just build your code with wrap and it should work.
+```sh
+gcc -Wl,-wrap,malloc
+```
