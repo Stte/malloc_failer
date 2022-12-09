@@ -1,4 +1,4 @@
-#include "test_malloc.h"
+#include "malloc_failer.h"
 
 extern void	*__real_malloc(size_t i);
 
@@ -25,7 +25,7 @@ void	*__wrap_malloc(size_t i)
 	return (__real_malloc(i));
 }
 
-void	test_mallocs(void (*p)())
+void	malloc_failer(void (*p)())
 {
 	p();
 	first_run = 0;

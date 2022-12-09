@@ -8,6 +8,6 @@ void	test_calloc()
 
 int	main(void)
 {
-	test_mallocs(test_calloc);
+	malloc_failer(test_calloc);
 	return (0);
 }

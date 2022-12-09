@@ -10,4 +10,4 @@
  *
  * @param p void function pointer. Should be callable without parameters.
  */
-void	test_mallocs(void (*p)());
+void	malloc_failer(void (*p)());
