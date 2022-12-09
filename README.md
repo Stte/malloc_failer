@@ -1,6 +1,6 @@
 # malloc_failer
 To make testing mallocs fails a tiny bit easier. 
-Malloc_failer fails mallocs one by one to help checking that malloc's are properly protected.
+Malloc_failer fails mallocs one by one to help checking that mallocs are properly protected.
 
 
 ---
