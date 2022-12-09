@@ -3,7 +3,10 @@ WRAP = -Wl,-wrap,malloc
 SANITIZE = -fsanitize=address
 TEST = ./unity/unity.c
 
-all: test
+all: setup
+
+setup:
+	sh test.sh
 
 test:
 	gcc $(FLAGS) $(WRAP) functions/*.c *.c ../*.c -o run_test
