@@ -47,3 +47,6 @@ On linux you should be able to just build your code with wrap and it should work
 ```sh
 gcc -Wl,-wrap,malloc
 ```
+
+# Demo
+To run the demo you just have to run `make -C ./demo`.
